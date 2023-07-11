@@ -37,7 +37,7 @@ const Sign = () => {
     if (data) {
       console.log(data);
       alert("User Created");
-      navigate('/');
+      navigate('/login');
     } else {
       alert("Invalid Credentials");
     }
@@ -57,7 +57,7 @@ const Sign = () => {
           <Button style={{ marginTop: 15 }} type="submit" color="primary" fullWidth variant='contained'>Register</Button>
         </form>
         <Typography style={{ marginTop: 15 }}>Already Have An Account ?
-          <Link href="/">
+          <Link href="/login">
             Login Here
           </Link>
         </Typography>

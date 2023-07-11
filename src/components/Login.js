@@ -30,8 +30,8 @@ const Login = () => {
       const data = await response.json();
       const token = data.token;
       localStorage.setItem('token', token);
-      alert("Login Successfull");
       navigate('/user/dashboard');
+      alert("Login Successfull");
     } else {
       alert("Invalid Credentials");
     }
