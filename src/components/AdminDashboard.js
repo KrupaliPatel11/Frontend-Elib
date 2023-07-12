@@ -33,7 +33,7 @@ const AdminDashboard = () => {
         fetch('http://127.0.0.1:1337/admin/book/upload', {
             method: "POST",
             headers: {
-                'Authorization': localStorage.getItem('token'), // Include the token in the Authorization header
+                'Authorization': localStorage.getItem('token')
             },
             body: formData
         }).then((response) => response.json()).then((data) => {
@@ -78,7 +78,7 @@ const AdminDashboard = () => {
                         required
                         onChange={(e) => setAuthor(e.target.value)}
                     />
-                    <TextField
+                    {/* <TextField
                         style={{ paddingTop: 3 }}
                         id="image"
                         label="Image"
@@ -88,7 +88,7 @@ const AdminDashboard = () => {
                         fullWidth
                         required
                         onChange={(e) => setImage(e.target.files[0])}
-                    />
+                    /> */}
                     <TextField
                         style={{ paddingTop: 3 }}
                         id="book"
