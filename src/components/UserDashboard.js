@@ -41,8 +41,6 @@ console.log(booksData,"bookdata")
                             </>)
                         }) : "null"
                     }
-
-
                 </div>
             </div>
         </div>

@@ -1,13 +1,11 @@
-
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { Button, Link } from '@mui/material';
+import { Button } from '@mui/material';
 import axios from 'axios';
-
-
+import ButtonBase from '@mui/material/ButtonBase';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -17,12 +15,14 @@ const Img = styled('img')({
 });
 
 export default function ComplexGrid({ data }) {
+
+  const IMG_FILE = `http://localhost:1337/${data.image.split("/public/")[1]}`;
   const PDF_FILE = `http://localhost:1337/${data.pdf.split("/public/")[1]}`;
   const handleClick = (url) => {
     axios({
       url: `http://localhost:1337/user/book/download/${data.id}`,
       method: "GET",
-      responseType: 'blob'    
+      responseType: 'blob'
     }).then((response) => {
       const href = URL.createObjectURL(response.data);
       const link = document.createElement('a');
@@ -30,12 +30,10 @@ export default function ComplexGrid({ data }) {
       link.setAttribute('download', `file.pdf`);
       document.body.appendChild(link);
       link.click();
-
       document.body.removeChild(link);
       URL.revokeObjectURL(href)
     })
   }
-
 
   return (
     <div className="col m-2">
@@ -50,6 +48,11 @@ export default function ComplexGrid({ data }) {
         }}
       >
         <Grid container spacing={2}>
+          <Grid item>
+            <ButtonBase sx={{ width: 128, height: 128 }}>
+              <Img alt="complex" src={`${IMG_FILE}`} />
+            </ButtonBase>
+          </Grid>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>

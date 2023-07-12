@@ -68,7 +68,6 @@ const AdminDashboard = () => {
                     />
                     <TextField
                         style={{ paddingTop: 3 }}
-                        //   onChange={(e) => setPassword(e.target.value)}
                         id="author"
                         label="Author"
                         variant="standard"
@@ -78,17 +77,6 @@ const AdminDashboard = () => {
                         required
                         onChange={(e) => setAuthor(e.target.value)}
                     />
-                    {/* <TextField
-                        style={{ paddingTop: 3 }}
-                        id="image"
-                        label="Image"
-                        variant="standard"
-                        placeholder="Book Cover Image"
-                        type="file"
-                        fullWidth
-                        required
-                        onChange={(e) => setImage(e.target.files[0])}
-                    /> */}
                     <TextField
                         style={{ paddingTop: 3 }}
                         id="book"
@@ -100,6 +88,17 @@ const AdminDashboard = () => {
                         required
                         accept=".pdf"
                         onChange={(e) => setFile(e.target.files[0])}
+                    />
+                    <TextField
+                        style={{ paddingTop: 3 }}
+                        id="image"
+                        label="Image"
+                        variant="standard"
+                        placeholder="Book Cover Image"
+                        type="file"
+                        fullWidth
+                        required
+                        onChange={(e) => setImage(e.target.files[0])}
                     />
                     <Button
                         style={{ marginTop: 15 }}
