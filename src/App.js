@@ -15,9 +15,6 @@ import AdminDashboard from './components/AdminDashboard';
 import Home from './components/Home';
 import PrivateRoutes from './components/ProtectedRoutes';
 
-// dropbox
-import DropboxChooser from 'react-dropbox-chooser';
-import DropBox from './components/DropBox';
 
 function App() {
   return (
