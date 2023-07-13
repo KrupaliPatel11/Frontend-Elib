@@ -1,3 +1,4 @@
+
 import { Avatar, Button, Grid, Link, Paper, TextField, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
@@ -26,10 +27,12 @@ const Login = () => {
       },
       body: JSON.stringify({ email, password }),
     });
-    console.log(response.ok)
+    console.log("response.ok=======", response)
     if (response.ok) {
       const data = await response.json();
+      console.log(data)
       const token = data.token;
+      console.log(token)
       localStorage.setItem('token', token);
       navigate('/user/dashboard');
       alert("Login Successfull");
@@ -62,3 +65,4 @@ const Login = () => {
 }
 
 export default Login;
+

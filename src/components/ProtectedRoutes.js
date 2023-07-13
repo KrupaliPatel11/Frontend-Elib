@@ -2,7 +2,6 @@ import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 
 const PrivateRoutes = () => {
-    // let auth = { "token": false }
     let token = localStorage.getItem('token');
     console.log(token)
     return (

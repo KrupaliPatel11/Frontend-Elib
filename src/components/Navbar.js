@@ -1,7 +1,18 @@
+import { Button } from '@mui/material';
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const token = localStorage.getItem('token');
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.setItem('token', "");
+        alert("Logout Successful");
+        navigate('/login');
+    }
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,10 +26,13 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
-                            {/* <li className="nav-item">
-                                <Link className="nav-link" to="/">Link</Link>
-                            </li> */}
                         </ul>
+
+                        {token ?
+                            (<form className="d-flex">
+                                <Button type="submit" color="primary" variant='contained' onClick={handleLogout} >Logout</Button>
+                            </form>) : ""
+                        }
                     </div>
                 </div>
             </nav>
